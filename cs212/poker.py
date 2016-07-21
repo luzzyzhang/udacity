@@ -13,7 +13,6 @@ def hand_rank(hand):
         return 8
     elif kind(4, ranks):
         return 7
-    elif ...
 
 
 def test():
