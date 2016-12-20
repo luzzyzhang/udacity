@@ -7,7 +7,8 @@ ta_data = [('Peter', 'USA', 'CS262'),
            ('Sean', 'USA', 'CS253')]
 
 
-ta_facts = [name + ' lives in ' + country + ' teach for ' + course for name, country, course in ta_data]
+ta_facts = [name + ' lives in ' + country + ' teach for ' + course for 
+            name, country, course in ta_data if country != 'USA']
 
 for row in ta_facts:
     print row
