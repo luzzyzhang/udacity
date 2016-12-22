@@ -53,7 +53,8 @@ def test():
     ODD + ODD == EVEN
     PLUTO not in set([PLANETS])""".splitlines()
     for example in examples:
-        print; print 13*' ', example
+        print
+        print 13*' ', example
         print '%6.4f sec:   %s' % timedcall(solve, example)
 
 
@@ -62,4 +63,4 @@ if __name__ == '__main__':
     # timedcall(test)
     # test()
     cProfile.run('test()')
-    print '%6.4f tot.' % (time.clock() - st)
+    # print '%6.4f tot.' % (time.clock() - st)
