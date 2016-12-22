@@ -39,7 +39,7 @@ def valid(f):
 def test(examples):
     for example in examples:
         print; print 13*' ', example
-        print '%6.4f sec:  %s  ' % timedcall(solve, example)
+        print '%6.4f sec:   %s' % timedcall(solve, example)
 
 
 if __name__ == '__main__':
