@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import itertools
 from utils.timedcall import timedcall, time_cost
+from utils.debug_fn import c, instrument_fn
 
 
 def imright(h1, h2):
@@ -19,21 +20,21 @@ def zebra_puzzle():
     orderings = list(itertools.permutations(houses))  # 1
     return next(
         (WATER, ZEBRA)
-        for (red, green, ivory, yellow, blue) in orderings
+        for (red, green, ivory, yellow, blue) in c(orderings)
         if imright(green, ivory)         # 6
-        for (Englishman, Spaniard, Ukranian, Japanese, Norwegian) in orderings
+        for (Englishman, Spaniard, Ukranian, Japanese, Norwegian) in c(orderings)
         if Englishman is red             # 2
         if Norwegian is first            # 10
         if nextto(Norwegian, blue)       # 15
-        for (coffee, tea, milk, oj, WATER) in orderings
+        for (coffee, tea, milk, oj, WATER) in c(orderings)
         if coffee is green               # 4
         if Ukranian is tea               # 5
         if milk is middle                # 9
-        for (OldGold, Kools, Chesterfields, LuckyStrike, Parliaments) in orderings
+        for (OldGold, Kools, Chesterfields, LuckyStrike, Parliaments) in c(orderings)
         if Kools is yellow               # 8
         if LuckyStrike is oj             # 13
         if Japanese is Parliaments       # 14
-        for (dog, snails, fox, horse, ZEBRA) in orderings
+        for (dog, snails, fox, horse, ZEBRA) in c(orderings)
         if Spaniard is dog               # 3
         if OldGold is snails             # 7
         if nextto(Chesterfields, fox)    # 11
@@ -43,4 +44,5 @@ def zebra_puzzle():
 
 if __name__ == '__main__':
     # print timedcall(zebra_puzzle)
-    print zebra_puzzle()
+    # print zebra_puzzle()
+    instrument_fn(zebra_puzzle)
