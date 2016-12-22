@@ -40,7 +40,7 @@ def timedcalls(n, fn, *args):
 def time_cost(fn, *args, **kwargs):
     """Decerator method"""
     @wraps(fn)
-    def time_it():
+    def time_it(*args, **kwargs):
         st = time.clock()
         result = fn(*args, **kwargs)
         return time.clock() - st, result
