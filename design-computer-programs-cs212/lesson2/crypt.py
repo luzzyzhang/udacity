@@ -4,6 +4,7 @@ import re
 import time
 import string
 import itertools
+import cProfile
 
 from utils.timedcall import timedcall
 
@@ -36,13 +37,7 @@ def valid(f):
         return False
 
 
-def test(examples):
-    for example in examples:
-        print; print 13*' ', example
-        print '%6.4f sec:   %s' % timedcall(solve, example)
-
-
-if __name__ == '__main__':
+def test():
     examples = """TWO + TWO == FOUR
     A**2 + B**2 == C**2
     A**2 + BE**2 == BY**2
@@ -57,6 +52,14 @@ if __name__ == '__main__':
     sum(range(POP)) == BOBO
     ODD + ODD == EVEN
     PLUTO not in set([PLANETS])""".splitlines()
+    for example in examples:
+        print; print 13*' ', example
+        print '%6.4f sec:   %s' % timedcall(solve, example)
+
+
+if __name__ == '__main__':
     st = time.clock()
-    test(examples)
+    # timedcall(test)
+    # test()
+    cProfile.run('test()')
     print '%6.4f tot.' % (time.clock() - st)
