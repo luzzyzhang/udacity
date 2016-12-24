@@ -65,6 +65,7 @@ def test():
     sum(range(AA)) == BB
     sum(range(POP)) == BOBO
     ODD + ODD == EVEN
+    YOU == ME**2
     PLUTO not in set([PLANETS])""".splitlines()
     for example in examples:
         print
