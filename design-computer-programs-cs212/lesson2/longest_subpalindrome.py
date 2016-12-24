@@ -14,8 +14,6 @@ def longest_subpalindrome_slice(text):
     candidates = [grow(text, start, end)
                   for start in range(len(text))
                   for end in (start, start+1)]
-    print candidates
-    print 50*'*'
     return max(candidates, key=length)
     # or
     # return max(candidates, key=lambda tpl: tpl[1] - tpl[0])
