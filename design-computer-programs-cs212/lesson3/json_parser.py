@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from functools import update_wrapper
-from string import split
 import re
+from string import split
+from functools import update_wrapper
 
 
 def grammar(description, whitespace=r'\s*'):
