@@ -92,8 +92,8 @@ def test():
              ['elements', ['value', ['number', ['int', '3']]]]]]], ']']], '')
 
     assert json_parse('-123.456e+789') == (
-        ['value', ['number', ['int', '-123'],
-         ['frac', '.456'], ['exp', 'e+789']]], '')
+        ['value',
+         ['number', ['int', '-123'], ['frac', '.456'], ['exp', 'e+789']]], '')
 
     s = '{"age": 21, "state":"CO","occupation":"rides the rodeo"}'
     assert json_parse(s) == (
