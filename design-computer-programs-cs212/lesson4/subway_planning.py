@@ -38,13 +38,13 @@ def subway(**lines):
     """
     successors = collections.defaultdict(dict)
     for linename, stops in lines.items():
-        for a, b in overapping_pairs(stops.split()):
+        for a, b in overlapping_pairs(stops.split()):
             successors[a][b] = linename
             successors[b][a] = linename
     return successors
 
 
-def overapping_pairs(items):
+def overlapping_pairs(items):
     return [items[i:i+2] for i in range(len(items)-1)]
 
 
