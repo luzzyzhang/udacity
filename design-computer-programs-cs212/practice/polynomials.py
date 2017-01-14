@@ -145,7 +145,7 @@ def canonical(coefs):
     """Canonicalize coefs by dropping trailing zeros and converting to a tuple.
     """
     if not coefs:
-        coefs[0]
+        coefs = [0]
     elif isinstance(coefs, (int, float)):
         coefs = [coefs]
     else:
