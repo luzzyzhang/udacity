@@ -230,8 +230,11 @@ def test_poly1():
 
 def test_poly2():
     newp1 = Poly('30 * x**2 + 20 * x + 10')
+    newp2 = Poly('60 * x**2 + 40 * x + 20')
+    x = poly((0, 1))
     assert p1(100) == newp1(100)
     assert same_name(p1.__name__, newp1.__name__)
+    assert newp1 + newp2 == 90 * x**2 + 60 * x + 30
     print 'poly2 test pass'
 
 
