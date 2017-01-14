@@ -103,7 +103,6 @@ def polynomial(coefs):
     # Horner's rule involves fewer multiplications than the normal formula...
     p = eval('lambda x: ' + horner_formula(coefs), {})
     p.__name__ = polynomial_formula(coefs)
-    print p.__name__
     p.coefs = coefs
     return p
 
