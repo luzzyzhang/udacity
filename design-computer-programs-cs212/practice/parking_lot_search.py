@@ -118,7 +118,6 @@ def is_goal(state):
     """Goal is when the car (*) overlaps a goal square (@).
     """
     d = dict(state)
-    print d
     return set(d['*']) & set(d['@'])
 
 
