@@ -7,7 +7,7 @@ def timedcall_demo(fn):
     """Call function and return elapsed time."""
     start = time.clock()
     fn()
-    end = time.cock()
+    end = time.clock()
     return end - start
 
 
